@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#06377A">
+  <title>BankGuard Local · Seguridad privada</title>
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#overview" aria-label="BankGuard inicio">
+      <img class="brand-icon" src="/logo.svg" alt="" width="42" height="42">
+      <span>BankGuard<small>SEGURIDAD FINANCIERA LOCAL</small></span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a class="nav active" href="#overview"><span class="nav-icon">⌂</span>Inicio</a>
+      <a class="nav" href="#activity"><span class="nav-icon">↕</span>Movimientos</a>
+      <a class="nav" href="#analysis"><span class="nav-icon">!</span>Alertas <span id="sidebar-alert-count" class="nav-badge">4</span></a>
+      <a class="nav" href="#security-assistant"><span class="nav-icon">▤</span>Biblioteca privada</a>
+    </nav>
+    <div class="local-status" title="QVAC · Inferencia en dispositivo · Sin envío de datos a servicios externos">
+      <span class="status-dot" aria-hidden="true"></span>
+      <div><b>Protección local activa</b><small>QVAC · Inferencia en dispositivo</small></div>
+    </div>
+    <div class="sidebar-footer"><span class="profile-mark">CA</span><div>Cuenta de demostración<small>Panamá · USD</small></div></div>
+  </aside>
+
+  <main id="overview">
+    <header class="topbar">
+      <div class="breadcrumb"><span>Inicio</span><span>/</span><b>Resumen</b></div>
+      <div class="topbar-actions"><span class="synthetic-tag">Datos 100% sintéticos</span><button id="reset" class="text-button">Reiniciar demo</button></div>
+    </header>
+    <div id="global-error" class="error" role="alert" hidden></div>
+
+    <section class="account-overview" aria-label="Resumen de cuenta">
+      <div class="account-copy"><p class="welcome">Buenos días</p><h1>Resumen de cuenta</h1><p class="account-subtitle">Cuenta de demostración · Panamá · USD</p></div>
+      <div class="runtime compact-runtime" title="QVAC · Inferencia en dispositivo · Sin envío de datos a servicios externos"><span class="status-dot"></span><div id="runtime-title">Protección local activa</div><small id="runtime-sub">Comprobando el modelo local</small></div>
+    </section>
+
+    <section class="balance-surface">
+      <div class="balance-main"><span>Saldo disponible</span><strong>$2,480.00</strong><small>Saldo simulado · cuenta demo</small><div class="quick-actions" aria-label="Acciones de cuenta"><a href="#activity">Transferir</a><a href="#activity">Pagar</a><a href="#activity">Movimientos</a></div></div>
+      <div class="balance-facts"><div><span>Compra promedio</span><b id="average">—</b><small>Historial de referencia</small></div><div><span>Movimientos por revisar</span><b><i id="review-count">4</i></b><small>Alertas detectadas</small></div></div>
+    </section>
+
+    <section class="dashboard-grid" id="activity">
+      <article class="panel transactions"><div class="panel-heading"><div><h2>Actividad reciente</h2><p>Últimos movimientos de tu cuenta</p></div><span class="count">Ver historial</span></div><div id="transaction-list" class="transaction-list" aria-label="Transacciones recientes"></div><div class="panel-note">Todos los movimientos de esta demostración son sintéticos.</div></article>
+      <aside class="security-column" id="analysis"><article class="protection-card"><div class="protection-header"><div><h2>Protección BankGuard</h2><p>Análisis preventivo de actividad</p></div><span class="protection-state"><i></i>Activa</span></div><div class="protection-summary"><b><i id="protection-count">4</i> movimientos requieren atención</b><span>Análisis realizado localmente en este dispositivo</span></div></article><article class="panel detail"><div id="detail-content" aria-live="polite"><div class="empty">Cargando la operación seleccionada…</div></div></article></aside>
+    </section>
+
+    <details id="history" class="history panel"><summary>Historial de referencia <span>24 operaciones sintéticas · ver perfil y datos</span></summary><div id="profile-details"></div><div class="table-scroll"><table><thead><tr><th>Fecha</th><th>Comercio</th><th>Monto</th><th>País</th></tr></thead><tbody id="baseline-rows"></tbody></table></div></details>
+
+    <section id="security-assistant" class="panel rag-panel"><div class="panel-heading"><div><h2>Biblioteca privada</h2><p id="rag-doc-count">Consulta documentos de seguridad almacenados localmente.</p></div><span class="count">RAG local</span></div><div class="rag-body"><p class="rag-disclaimer">Material sintético de demostración, no políticas oficiales de una entidad. No introduzcas contraseñas ni información bancaria real.</p><form id="rag-form"><label for="rag-question">¿Qué necesitas aclarar?</label><textarea id="rag-question" rows="3" minlength="5" maxlength="600" required placeholder="Me llegó un correo pidiendo confirmar mi contraseña. ¿Qué hago?"></textarea><div class="rag-actions"><button type="button" class="secondary" id="rag-example">Usar ejemplo de phishing</button><button type="submit" class="primary" id="rag-submit">Consultar documentos</button></div></form><p id="rag-progress" class="button-hint" role="status">Embeddings y LLM se cargan por separado para limitar el uso de memoria.</p><div id="rag-result" aria-live="polite"></div><details class="audit"><summary>Explorar documentos sintéticos disponibles</summary><div id="rag-documents"></div></details></div></section>
+    <footer><span><b>Demo, no servicio bancario.</b> Los bloqueos y reportes son simulaciones.</span><span>BankGuard · Seguridad local</span></footer>
+  </main>
+</body>
+</html>

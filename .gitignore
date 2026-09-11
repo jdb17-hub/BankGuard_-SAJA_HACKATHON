@@ -1,0 +1,12 @@
+.env*
+!.env.example
+*.gguf
+*.bin
+*.log
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+work/
+.streamlit/secrets.toml
